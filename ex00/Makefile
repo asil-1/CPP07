@@ -15,6 +15,11 @@ OBJ			:=	$(SRC:%.cpp=$(BUILD_DIR)%.o)
 DEPS		:=	$(SRC:%.cpp=$(BUILD_DIR)%.d)
 OBJ_DIR		:=	$(sort $(dir $(OBJ)))
 
+#Color_______________________
+
+COLOR		:= \033[0;38;5;24m
+NC			:= \033[0m
+
 #____________________________
 
 all: $(NAME)
@@ -28,7 +33,7 @@ $(BUILD_DIR):
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp | $(BUILD_DIR)
 	@$(CXX) $(CXXFLAGS) $< -c -o $@
-	@echo "[$(CXX)] $<"
+	@echo "$(COLOR)[$(CXX)]$(NC) $<"
 
 clean:
 	@rm -rf $(BUILD_DIR)
