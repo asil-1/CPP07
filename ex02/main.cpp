@@ -87,5 +87,18 @@ int main(int, char**)
 	std::cout << "array:" << std::endl;
 	for (int i = 0; i < 4; i++)
 		std::cout << str[i] << std::endl;
+
+	/*IF YOU UNCOMMENT THIS, THE PROGRAMME DOESN'T COMPILE*/
+	/*
+	std::cout << std::endl;
+	std::cout << "create a const array of char and trying to change its values" << std::endl;
+	const Array<char>	constArray(12);
+	try {
+		for (int i = 0; i < 12; i++)
+			constArray[i] = i;
+	} catch (const std::exception& e) {
+		std::cerr << e.what() << std::endl;
+	}
+	*/
 	return 0;
 }
